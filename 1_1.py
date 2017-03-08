@@ -1,3 +1,5 @@
+#coding:utf-8
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -13,7 +15,7 @@ def basicStats(data):
     }, name=data.name)
     return basicStats
 
-data = pd.read_table('data/1/d-axp3dx-0111.txt', sep='\s+', index_col=0)
+data = pd.read_table('data/ch1data/d-axp3dx-0111.txt', sep='\s+', index_col=0)
 print(basicStats(data.axp))
 print(basicStats(np.log(1 + data.axp)))
 #data.axp.plot()
