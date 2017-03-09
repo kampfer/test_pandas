@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 from pandas.tools.plotting import autocorrelation_plot
 
 data = pd.read_table('data/ch2data/m-dec12910.txt', sep = '\s+', index_col = 0)
-# plt.subplot(311)
+print data.dec10.autocorr()
 # data.dec10.plot()
 # plt.subplot(312)
 # plt.plot(data.dec10)
