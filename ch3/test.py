@@ -3,7 +3,6 @@
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from statsmodels.graphics.tsaplots import plot_acf, plot_pacf
 
 data = pd.read_table('../data/ch3data/w-petroprice.txt', sep='\s+', header=0)
 data1 = pd.read_table('../data/ch3data/w-gasoline.txt', sep='\s+', squeeze=True)
@@ -36,7 +35,7 @@ priceReturn1.plot()
 plt.show()
 '''
 
-f = plt.figure()
-ax1 = f.add_subplot(211)
-plot_acf(price1Return, lags=31, ax=ax1)
-plt.show()
+import sys
+sys.path.append('..')
+from util.plot import drawAcfAndPacf
+drawAcfAndPacf(price1Return[1:])
