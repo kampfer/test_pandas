@@ -39,3 +39,7 @@ import sys
 sys.path.append('..')
 from util.plot import drawAcfAndPacf
 drawAcfAndPacf(price1Return[1:])
+
+import statsmodels
+print statsmodels.tsa.stattools.adfuller(price1Return[1:])
+print statsmodels.tsa.arima_model.ARMA(price1Return[1:], order=(4,0)).fit(disp=-1)
